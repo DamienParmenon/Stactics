@@ -1,0 +1,17 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #summonerForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="summonerName"
+                 class="form-control"
+                 id="name"
+                 name="name"
+                 placeholder="Joueur à rechercher"
+                 required #name="ngModel">
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+  
