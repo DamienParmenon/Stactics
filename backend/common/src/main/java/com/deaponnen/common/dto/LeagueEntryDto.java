@@ -20,6 +20,9 @@ public class LeagueEntryDto {
     private boolean inactive;
     private MiniSeriesDto miniSeries;
 
+    public LeagueEntryDto(){
+    }
+
     public LeagueEntryDto(LeagueEntryEntity entity) {
         this.leagueId = entity.getLeagueId();
         this.summonerId = entity.getSummonerId();

@@ -20,6 +20,9 @@ public class ParticipantDto {
     private List<TraitDto> traits;
     private List<UnitDto> units;
 
+    public ParticipantDto(){
+    }
+
     public ParticipantDto(ParticipantEntity entity) {
         this.augments = entity.getAugments();
         this.companion = new CompanionDto(entity.getCompanion());

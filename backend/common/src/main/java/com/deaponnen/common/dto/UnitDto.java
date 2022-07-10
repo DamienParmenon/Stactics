@@ -13,6 +13,9 @@ public class UnitDto {
     private int rarity;
     private int tier;
 
+    public UnitDto(){
+    }
+
     public UnitDto(UnitEntity entity) {
         this.items = entity.getItems();
         this.itemNames = entity.getItemNames();

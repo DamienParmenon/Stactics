@@ -16,7 +16,11 @@ public class TraitEntity {
     private int tier_current;
     private int tier_total;
     @ManyToOne
+    @JoinColumn(name = "participant_id")
     private ParticipantEntity participant;
+
+    public TraitEntity(){
+    }
 
     public TraitEntity(TraitDto dto) {
         this.name = dto.getName();

@@ -9,6 +9,9 @@ public class TraitDto {
     private int tier_current;
     private int tier_total;
 
+    public TraitDto(){
+    }
+
     public TraitDto(TraitEntity entity) {
         this.name = entity.getName();
         this.num_units = entity.getNum_units();

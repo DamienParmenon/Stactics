@@ -1,4 +1,4 @@
-package com.deaponnen.common.dtoToUI;
+package fr.deaponnen.stactics.microserviceentrypoint.dto;
 
 public class ParticipantDataDto {
     private int position;

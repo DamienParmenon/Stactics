@@ -11,19 +11,25 @@ public class MatchEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long match_id;
-    @OneToOne
-    @JoinColumn(name = "match_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "metadata_id")
     private MetadataEntity metadata;
-    @OneToOne
-    @JoinColumn(name = "match_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "info_id")
     private InfoEntity info;
-    @ManyToOne()
+
+    @ManyToOne
+    @JoinColumn(name = "summoner_id")
     private SummonerEntity summoner;
 
-    public MatchEntity(MatchDto dto, SummonerEntity summoner) {
+    public MatchEntity(){
+    }
+
+    public MatchEntity(MatchDto dto) {
         this.metadata = new MetadataEntity(dto.getMetadata());
         this.info = new InfoEntity(dto.getInfo());
-        this.summoner = summoner;
     }
 
     public Long getMatch_id() {

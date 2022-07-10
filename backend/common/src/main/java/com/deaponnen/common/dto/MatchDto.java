@@ -6,6 +6,9 @@ public class MatchDto {
     private MetadataDto metadata;
     private InfoDto info;
 
+    public MatchDto(){
+    }
+
     public MatchDto(MatchEntity entity) {
         this.metadata = new MetadataDto(entity.getMetadata());
         this.info = new InfoDto(entity.getInfo());

@@ -9,6 +9,9 @@ public class MetadataDto {
     private String match_id;
     private List<String> participants;
 
+    public MetadataDto(){
+    }
+
     public MetadataDto(MetadataEntity entity) {
         this.data_version = entity.getData_version();
         this.match_id = entity.getMatch_id();

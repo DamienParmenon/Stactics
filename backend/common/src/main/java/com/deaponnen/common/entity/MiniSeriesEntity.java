@@ -15,6 +15,9 @@ public class MiniSeriesEntity {
     private int target;
     private int wins;
 
+    public MiniSeriesEntity(){
+    }
+
     public MiniSeriesEntity(MiniSeriesDto dto) {
         this.losses = dto.getLosses();
         this.progress = dto.getProgress();

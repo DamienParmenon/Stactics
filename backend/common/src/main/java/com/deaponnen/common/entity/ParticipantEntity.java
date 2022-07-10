@@ -25,12 +25,13 @@ public class ParticipantEntity {
     private String puuid;
     private float time_eliminated;
     private int total_damage_to_players;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "participant_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "participant")
     private List<TraitEntity> traits;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "participant_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "participant")
     private List<UnitEntity> units;
+
+    public ParticipantEntity(){
+    }
 
     public ParticipantEntity(ParticipantDto dto) {
         this.augments = dto.getAugments();
@@ -44,8 +45,8 @@ public class ParticipantEntity {
         this.puuid = dto.getPuuid();
         this.time_eliminated = dto.getTime_eliminated();
         this.total_damage_to_players = dto.getTotal_damage_to_players();
-        this.traits = dto.getTraits().stream().map(t -> new TraitEntity(t)).collect(Collectors.toList());
-        this.units = dto.getUnits().stream().map(u -> new UnitEntity(u)).collect(Collectors.toList());
+        this.traits = dto.getTraits().stream().map(TraitEntity::new).collect(Collectors.toList());
+        this.units = dto.getUnits().stream().map(UnitEntity::new).collect(Collectors.toList());
     }
 
     public Long getParticipant_id() {

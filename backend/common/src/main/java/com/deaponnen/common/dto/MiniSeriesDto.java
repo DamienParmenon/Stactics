@@ -12,6 +12,9 @@ public class MiniSeriesDto {
         return losses;
     }
 
+    public MiniSeriesDto(){
+    }
+
     public MiniSeriesDto(MiniSeriesEntity entity) {
         this.losses = entity.getLosses();
         this.progress = entity.getProgress();

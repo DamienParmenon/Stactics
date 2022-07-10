@@ -16,6 +16,9 @@ public class MetadataEntity {
     @ElementCollection
     private List<String> participants;
 
+    public MetadataEntity(){
+    }
+
     public MetadataEntity(MetadataDto dto) {
         this.data_version = dto.getData_version();
         this.match_id = dto.getMatch_id();

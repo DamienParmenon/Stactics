@@ -16,6 +16,9 @@ public class InfoDto {
     private String tft_set_core_name;
     private int tft_set_number;
 
+    public InfoDto(){
+    }
+
     public InfoDto(InfoEntity entity) {
         this.game_datetime = entity.getGame_datetime();
         this.game_length = entity.getGame_length();

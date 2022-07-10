@@ -19,9 +19,11 @@ public class SummonerEntity {
     private String id;
     private String puuid;
     private Long summonerLevel;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "summoner_id")
-    private List<MatchEntity> matchs;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "summoner")
+    private List<MatchEntity> matchs = new ArrayList<>();
+
+    public SummonerEntity(){
+    }
 
     public SummonerEntity(SummonerDto dto) {
         this.accountId = dto.getAccountId();
@@ -31,7 +33,6 @@ public class SummonerEntity {
         this.id = dto.getId();
         this.puuid = dto.getPuuid();
         this.summonerLevel = dto.getSummonerLevel();
-        this.matchs = new ArrayList<>();
     }
 
     public Long getSummoner_id() {
@@ -104,5 +105,10 @@ public class SummonerEntity {
 
     public void setMatchs(List<MatchEntity> matchs) {
         this.matchs = matchs;
+    }
+
+    public void addMatch(MatchEntity match){
+        match.setSummoner(this);
+        this.matchs.add(match);
     }
 }

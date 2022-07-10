@@ -11,6 +11,9 @@ public class SummonerDto {
     private String puuid;
     private long summonerLevel;
 
+    public SummonerDto() {
+    }
+
     public SummonerDto(SummonerEntity entity) {
         this.accountId = entity.getAccountId();
         this.profileIconId = entity.getProfileIconId();

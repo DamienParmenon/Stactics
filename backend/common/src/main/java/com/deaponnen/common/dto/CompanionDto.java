@@ -7,6 +7,9 @@ public class CompanionDto {
     private String content_ID;
     private String species;
 
+    public CompanionDto(){
+    }
+
     public CompanionDto(CompanionEntity entity) {
         this.skin_ID = entity.getSkin_ID();
         this.content_ID = entity.getContent_ID();

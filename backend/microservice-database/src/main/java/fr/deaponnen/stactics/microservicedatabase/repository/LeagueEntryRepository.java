@@ -1,4 +1,4 @@
-package com.deaponnen.statft_db.repository;
+package fr.deaponnen.stactics.microservicedatabase.repository;
 
 import com.deaponnen.common.entity.LeagueEntryEntity;
 import org.springframework.data.repository.CrudRepository;

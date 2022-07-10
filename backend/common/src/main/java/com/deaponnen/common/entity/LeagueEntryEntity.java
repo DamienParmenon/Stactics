@@ -17,6 +17,7 @@ public class LeagueEntryEntity {
     private String ratedTier;
     private int ratedRating;
     private String tier;
+    @Column(name = "_rank")
     private String rank;
     private int leaguePoints;
     private int wins;
@@ -29,6 +30,8 @@ public class LeagueEntryEntity {
     @JoinColumn(name = "league_entry_id")
     private MiniSeriesEntity miniSeries;
 
+    public LeagueEntryEntity(){
+    }
 
     public LeagueEntryEntity(LeagueEntryDto dto) {
         this.leagueId = dto.getLeagueId();

@@ -21,7 +21,11 @@ public class UnitEntity {
     private int rarity;
     private int tier;
     @ManyToOne
+    @JoinColumn(name = "participant_id")
     private ParticipantEntity participant;
+
+    public UnitEntity(){
+    }
 
     public UnitEntity(UnitDto dto) {
         this.items = dto.getItems();
